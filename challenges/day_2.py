@@ -1,4 +1,3 @@
-from os import path
 from typing import Any, Generator
 
 import re
@@ -75,12 +74,13 @@ def get_power_of_game(game: str) -> int:
 
 
 if __name__ == "__main__":
-    filename = path.join("inputs/day_2.txt")
-    data = read_file(filename)
+    filename = "inputs/day_2.txt"
+    lines = read_file(filename)
+
     result_1 = 0
     result_2 = 0
 
-    for line in data.split("\n")[:-1]:
+    for line in lines:
         if is_valid_game(line) is True:
             result_1 += get_game_id(line)
 

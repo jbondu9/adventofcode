@@ -1,5 +1,3 @@
-from os import path
-
 import re
 
 from utils.handle_file import read_file
@@ -48,12 +46,13 @@ def find_first_digit(line: str, with_word=False, reverse=False) -> int:
 
 
 if __name__ == "__main__":
-    filename = path.join("inputs/day_1.txt")
-    data = read_file(filename)
+    filename = "inputs/day_1.txt"
+    lines = read_file(filename)
+
     result_1 = 0
     result_2 = 0
 
-    for line in data.split("\n")[:-1]:
+    for line in lines:
         tens_digit = find_first_digit(line) * 10
         units_digit = find_first_digit(line, reverse=True)
         result_1 += tens_digit + units_digit
